@@ -1,0 +1,5 @@
+    ¿Qué es un framework?, es un marco de trabajo y practicas para seguir los cuales estan estandarizados. Funciona para tener buenas practicas, y posee herramientas ya desarrolladas.
+
+    Ejemplos: Larabel para PHP, Angular para JavaScript (Front-end), Express para JS (Back-end).
+
+    
