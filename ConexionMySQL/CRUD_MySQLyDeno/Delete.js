@@ -9,7 +9,7 @@ async function connectionSQL() {
         port: 3306,
     });
 
-    var ID = prompt("Ingrese ID de usuario a borrar");
+    let ID = prompt("Ingrese ID de usuario a borrar");
 
     try{
 

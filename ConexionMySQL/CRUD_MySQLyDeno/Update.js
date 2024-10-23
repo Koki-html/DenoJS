@@ -11,31 +11,38 @@ async function connectionSQL() {
 
     try{
 
-        var OP = prompt("Seleccione que desea modificar: \n 1- Nombre de usuario \n 2- Edad del usuario \n Ingrese opción: ")
+        let OP = prompt("Seleccione que desea modificar: \n 1- Nombre de usuario \n 2- Edad del usuario \n Ingrese opción: ")
+
+        let ID = prompt("Ingrese ID de persona a modificar");
+
+        const Result1 = await client.query("Select * from Usser where ID = ?", [ID]);
+
+        console.log("\n Persona a modificar: \n ", Result1);
 
         switch (OP) {
             case "1":
 
-                var ID = prompt("Ingrese ID de persona a modificar");
-                
-                const Result1 = await client.query("Select * from Usser where ID = ?", [ID]);
-                
-                console.log("\n Persona a modificar: \n ", Result1);
-
-                var Name = prompt("\n Ingrese nuevo nombre");
+                let Name = prompt("\n Ingrese nuevo nombre");
 
                 await client.execute("UPDATE Usser SET NameUsser = ? WHERE ID = ? ;", [Name, ID]);
 
-                const Result2 = await client.query("select * from Usser where ID = ?;", [ID]);
+                break;
+            
+            case "2":
 
-                console.log("\n Resultados de la modificación: \n", Result2);
+                let Age = prompt("\n Ingrese nueva edad");
+
+                await client.execute("UPDATE Usser SET Age = ? WHERE ID = ? ;", [Age, ID]);
 
                 break;
-        
             default:
                 console.log("Opción incorrecta.")
                 break;
         }
+
+        const Result = await client.query("select * from Usser where ID = ?;", [ID]);
+
+        console.log("\n Resultados de la modificación: \n", Result1);
 
     } catch (error){
         console.error("error al realizar las operaciones", error);

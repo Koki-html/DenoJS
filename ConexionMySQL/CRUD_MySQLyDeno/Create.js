@@ -9,8 +9,8 @@ async function connectionSQL() {
         port: 3306,
     });
 
-    var User = prompt("Ingrese Nombre")
-    var Age = prompt("Ingrese edad")
+    let User = prompt("Ingrese Nombre")
+    let Age = prompt("Ingrese edad")
 
     try{
         await client.execute("Insert into Usser(NameUsser, Age) values (?,?)", [User, Age]);

@@ -2,4 +2,28 @@
 
     Ejemplos: Larabel para PHP, Angular para JavaScript (Front-end), Express para JS (Back-end).
 
+    ¿Para que sirve Deno?
+
+    Deno es un runtime de codigo abierto para TypeScrtipt y JavaScript. Otorgando herramientas de ayuda en las herramientas de desarrollo web, Api's, etc.
+
+    Se usa mediante la terminal de tu editor de codigo, o también desde Windows Powershell.
+
+    Para instalarlo en windows se debe usar el siguente comando en Windows Powershell: 
+    
+        irm https://deno.land/install.ps1 | iex
+
+    Para poder programar con Deno podemos usar tanto JavaScript como TypeScript.
+
+    Deno posee un ejemplo de proyecto incorporado, para usarlo desde la terminal del editor de codigo debemos seleccionar donde queremos que se instale (Usando CD C:/User/example) y luego en la terminal usar "deno init my_project"
+
+    Eso crea un proyecto llamado "my_project" que podremos ejecutar con el comando:
+
+    deno run main.ts
+
+    
+
+
+
+
+
     

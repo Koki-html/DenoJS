@@ -9,7 +9,7 @@ async function connectionSQL() {
         port: 3306,
     });
 
-    var Edad = prompt("Ingrese edad a buscar");
+    let Edad = prompt("Ingrese edad a buscar");
 
     try{
 
