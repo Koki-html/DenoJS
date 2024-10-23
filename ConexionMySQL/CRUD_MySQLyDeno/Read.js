@@ -2,12 +2,13 @@ import { Client } from "https://deno.land/x/mysql/mod.ts";
 
 async function connectionSQL() {
     const client = await new Client().connect({
-        hostname: "127.0.0.1",
-        username: "root",
-        db: "crud_deno",
-        password: "1234",
-        port: 3306,
+        hostname: config.hostname,
+        username: config.username,
+        db: config.db,
+        password: config.password,
+        port: config.port,
     });
+
 
     let Edad = prompt("Ingrese edad a buscar");
 
