@@ -7,9 +7,9 @@ import { Client } from "https://deno.land/x/mysql/mod.ts";
 async function connectionSQL() {
     const client = await new Client().connect({
         hostname: "127.0.0.1",
-        username: "Coqui",
+        username: "root",
         db: "conexion_deno",
-        password: "miguelmarzo",
+        password: "1234",
         port: 3306,
     });
 
