@@ -1,0 +1,7 @@
+{
+    "hostname": "127.0.0.1",
+    "username": "root",
+    "db": "crud_deno",
+    "password": "1234",
+    "port": 3306
+  }

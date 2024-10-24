@@ -1,8 +1,9 @@
 {
     "tasks":{
-        "Create": "run --allow-net -allow-read --allow-write Create.js",
-        "Delete": "run --allow-net -allow-read --allow-wirte Delete.js",
-        "Read": "run --allow-net -allow-read --allow-wirte Read.js",
-        "ReadAll": "run --allow-net -allow-read --allow-wirte ReadAll.js",
+        "Create": "Deno run --allow-net --allow-read --allow-write ConexionMySQL/Create.js",
+        "Delete": "Deno run --allow-net --allow-read --allow-write ConexionMySQL/Delete.js",
+        "Read": "Deno run --allow-net --allow-read --allow-write ConexionMySQL/Read.js",
+        "ReadAll": "Deno run --allow-net --allow-read --allow-write ConexionMySQL/ReadAll.js",
+        "WebPage": "Deno run --allow-net --allow-read WebpageDenoJS/index.ts"
     }
 }
