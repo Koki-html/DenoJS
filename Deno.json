@@ -1,0 +1,8 @@
+{
+    "tasks":{
+        "Create": "run --allow-net -allow-read --allow-write Create.js",
+        "Delete": "run --allow-net -allow-read --allow-wirte Delete.js",
+        "Read": "run --allow-net -allow-read --allow-wirte Read.js",
+        "ReadAll": "run --allow-net -allow-read --allow-wirte ReadAll.js",
+    }
+}

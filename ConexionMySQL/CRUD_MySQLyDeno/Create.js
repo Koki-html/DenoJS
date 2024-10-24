@@ -1,5 +1,8 @@
-import { Client } from "https://deno.land/x/mysql/mod.ts";
-import { readJson } from "https://deno.land/std/fs/mod.ts";
+import { Client } from "https://deno.land/x/mysql@v2.12.1/mod.ts";
+
+const ConfigData = await Deno.readTextFile("config.json");
+
+const config = JSON.parse(ConfigData);
 
 async function connectionSQL() {
     const client = await new Client().connect({
@@ -10,8 +13,8 @@ async function connectionSQL() {
         port: config.port,
     });
 
-    let User = prompt("Ingrese Nombre")
-    let Age = prompt("Ingrese edad")
+    const User = prompt("Ingrese Nombre")
+    const Age = prompt("Ingrese edad")
 
     try{
         await client.execute("Insert into Usser(NameUsser, Age) values (?,?)", [User, Age]);

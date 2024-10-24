@@ -1,4 +1,8 @@
-import { Client } from "https://deno.land/x/mysql/mod.ts";
+import { Client } from "https://deno.land/x/mysql@v2.12.1/mod.ts";
+
+const ConfigData = await Deno.readTextFile("config.json");
+
+const config = JSON.parse(ConfigData);
 
 async function connectionSQL() {
     const client = await new Client().connect({
@@ -10,7 +14,7 @@ async function connectionSQL() {
     });
 
 
-    let ID = prompt("Ingrese ID de usuario a borrar");
+    const ID = prompt("Ingrese ID de usuario a borrar");
 
     try{
 

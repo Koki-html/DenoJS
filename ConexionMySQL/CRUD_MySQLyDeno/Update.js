@@ -1,4 +1,8 @@
-import { Client } from "https://deno.land/x/mysql/mod.ts";
+import { Client } from "https://deno.land/x/mysql@v2.12.1/mod.ts";
+
+const ConfigData = await Deno.readTextFile("config.json");
+
+const config = JSON.parse(ConfigData);
 
 async function connectionSQL() {
     const client = await new Client().connect({
@@ -12,26 +16,28 @@ async function connectionSQL() {
 
     try{
 
-        let OP = prompt("Seleccione que desea modificar: \n 1- Nombre de usuario \n 2- Edad del usuario \n Ingrese opción: ")
+        const OP = prompt("Seleccione que desea modificar: \n 1- Nombre de usuario \n 2- Edad del usuario \n Ingrese opción: ")
 
-        let ID = prompt("Ingrese ID de persona a modificar");
+        const ID = prompt("Ingrese ID de persona a modificar");
 
         const Result1 = await client.query("Select * from Usser where ID = ?", [ID]);
 
         console.log("\n Persona a modificar: \n ", Result1);
 
         switch (OP) {
+            // deno-lint-ignore no-case-declarations
             case "1":
 
-                let Name = prompt("\n Ingrese nuevo nombre");
+                const Name = prompt("\n Ingrese nuevo nombre");
 
                 await client.execute("UPDATE Usser SET NameUsser = ? WHERE ID = ? ;", [Name, ID]);
 
                 break;
             
+            // deno-lint-ignore no-case-declarations
             case "2":
 
-                let Age = prompt("\n Ingrese nueva edad");
+                const Age = prompt("\n Ingrese nueva edad");
 
                 await client.execute("UPDATE Usser SET Age = ? WHERE ID = ? ;", [Age, ID]);
 
@@ -43,7 +49,7 @@ async function connectionSQL() {
 
         const Result = await client.query("select * from Usser where ID = ?;", [ID]);
 
-        console.log("\n Resultados de la modificación: \n", Result1);
+        console.log("\n Resultados de la modificación: \n", Result);
 
     } catch (error){
         console.error("error al realizar las operaciones", error);
